@@ -1,0 +1,9 @@
+export { default as PokemonAbilities } from './PokemonAbilities';
+export { default as PokemonCard } from './PokemonCard';
+export { default as PokemonHeader } from './PokemonHeader';
+export { default as PokemonImageSection } from './PokemonImageSection';
+export { default as PokemonInformation } from './PokemonInformation';
+export { default as PokemonMoves } from './PokemonMoves';
+export { default as PokemonStadistics } from './PokemonStadistics';
+export { default as PokemonTabs } from './PokemonTabs';
+export { default as PokemonTypesBadges } from './PokemonTypesBadges';

@@ -1,0 +1,39 @@
+
+    const imageRef = useRef<HTMLImageElement>(null);
+
+    const pkmName = useMemo(() => {
+      return pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    }, [pokemon.name]);
+    const pkmType = useMemo(() => {
+      return pokemon.types.map(
+        (types: any) =>
+          types.type.name.charAt(0).toUpperCase() + types.type.name.slice(1),
+      );
+    }, [pokemon]);
+
+    const borderColor = cardBorder(pkmType[0].toLowerCase());
+    const borderColorSecondary = cardBorder(pkmType[1] || "");
+    const backgroundByType = background(pkmType[0]);
+
+
+          <div className="flex flex-row items-center gap-4">
+            <div className="flex flex-col items-center">
+              <div
+                style={{ background: borderColor }}
+                className={`w-auto mb-1 px-1 border-2 border-${pkmType[0].toLowerCase()} rounded`}
+              >
+                <strong className="text-white">{pkmType[0]}</strong>
+              </div>
+              {pkmType[1] && (
+                <div
+                  style={{
+                    background: borderColorSecondary,
+                  }}
+                  className={`w-auto px-1 border-2 border-${pkmType[1].toLowerCase()} rounded`}
+                >
+                  <strong className="text-white">{pkmType[1]}</strong>
+                </div>
+              )}
+            </div>
+            {children}
+          </div>
